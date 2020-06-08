@@ -34,7 +34,9 @@
     <section class="row controls" v-else>
         <div class="small-12 columns">
             <button id="attack" @click="attack">ATTACK</button>
-            <button id="special-attack" @click="specialAttack" v-show="count>5?true:false">SPECIAL ATTACK</button>
+            <transition name="fade" mode="out-in">
+            <button id="special-attack" @click="specialAttack" v-if="count>5?true:false">SPECIAL ATTACK</button>
+            </transition>
             <button id="heal" @click="heal">HEAL</button>
             <button id="give-up" @click="giveUp">GIVE UP</button>
         </div>
